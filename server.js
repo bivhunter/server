@@ -11,11 +11,11 @@ const app = express()
 app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))*/
 
-app.use('/', express.static(__dirname + '/public'));
+app.use('/', express.static(__dirname + '/app/public'));
 
 app.get('/', (request, response) => {
 	console.log(__dirname)
-	response.sendFile(__dirname + '/public/index.html');
+	response.sendFile(__dirname + '/app/public/index.html');
 })
 
 app.listen(process.env.PORT || 5000);
